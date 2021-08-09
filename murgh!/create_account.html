@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreateAccount</title>
+</head>
+<body>
+
+    <div class="form-wrapper1">
+        <form name="form1" action="login_act_cx.php" method="post">
+            EMAIL:<input type="email" name="lid" /><br>
+            <p>*This email address will be your login ID!</p>
+            PW:<input type="password" name="lpw" /><br>
+            <p>*Length: 4~20 letters. Pls use at least one number and one mark!</p>
+        </form>
+    </div>
+
+    <div class="form-wrapper2">
+        <form action="#" method="POST">
+          <dl class="form-inner">
+              <dt class="form-title">Name</dt>
+              <dd class="form-item"><input type="text" name="name" id="name" class="form-parts"></dd>
+              <dt class="form-title">Phone Number</dt>
+              <dd class="form-item"><input type="Phone" name="phone" id="phone" class="form-parts"></dd>
+              <dt class="form-title">Photo</dt>
+              <dd class="form-item"><input type="file" name="photo" id="photo" class="form-parts"></dd>
+              <dt class="form-title">Location of your farm</dt>
+              <dd class="form-item"><input type="" name="farm_location" id="farm_location" class="form-parts"></dd>
+              
+              <dt class="form-title">No. of sheds you have</dt>
+              <dd class="form-item">
+                <select name="select" name="farm_number" id="farm_number" class="form-parts">
+                    <option value="">-</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+              </dd>
+              <dt class="form-title">Total capacity (no. of birds)</dt>
+              <dd class="form-item"><input type="number" name="farm_capacity" id="farm_capacity" class="form-parts"></dd>
+
+          </dl>
+          <input type="submit" value="SEND" class="btn">
+      </form>
+    </div>
+
+    
+</body>
+</html>

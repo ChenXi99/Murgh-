@@ -1,0 +1,30 @@
+@charset "utf-8";
+html{
+    font-size: 16px;
+    line-height: auto;
+    scroll-behavior: smooth;
+    background-color:rgb(78, 76, 76);
+}
+
+body{
+    width: 490px;
+    margin:0 auto;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.icon_wrap1,
+.icon_wrap2{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+.icon{
+    margin: 10px;
+}
+
+img{
+    width: 320px;
+}

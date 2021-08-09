@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <input id="input1" type="text"> * 
+    <input id="input2" type="text"> = 
+    <input id="result" type="text">
+    <button id="btn">Result</button>
+    
+<script>
+  $('#input2').keyup(function(){
+    var numA = $('#input1').val();
+    var numB = $('#input2').val();
+    //parseIntで文字列を数値に
+    numA = parseInt(numA);
+    numB = parseInt(numB);
+    //左側の入力値が数値では無い場合の処理
+    if(!numA){
+      //計算結果表示のinput内を削除
+      $('#input1').val('');
+      return false;
+    };
+    //右側の入力値が数値では無い場合の処理
+    if(!numB){
+      //計算結果表示のinput内を削除
+      $('#input2').val('');
+      return false;
+    };
+    $('#result').val(numA*numB);
+  });
+
+// jQuery(function($){
+//   $('#btn').click(function(){
+//     var numA = $('#input1').val();
+//     //parseIntで文字列を数値に
+//     numA = parseInt(numA);
+//     //数値が入っていない場合アラート
+//     if(!numA){
+//       alert('左側の入力が空白もしくは数値以外です');
+//       return false;
+//     };
+//     var numB = $('#input2').val();
+//     //parseIntで文字列を数値に
+//     //数値が入っていない場合アラート
+//     numB = parseInt(numB);
+//     if(!numB){
+//       alert('右側の入力が空白もしくは数値以外です');
+//       return false;
+//     };
+//     //計算結果を出力
+//     $('#result').val(numA+numB);
+//   });
+// });
+</script>
+
+</body>
+</html>
+
