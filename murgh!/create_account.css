@@ -11,37 +11,20 @@ body{
     height: 650px;
     margin:0 auto;
     justify-content: center;
-    text-align: center;
+    /* text-align: center; */
     align-items: center;
     background-color: white;
     border-radius: 40px;
 }
 
-.wrap{
-    margin-top: 35px;
-    justify-content: center;
-    align-items: center;
-}
-
-.icon{
-    display: block;
-    justify-content: center;
-    margin-top:35px;
-}
-
-img{
-    width: 320px;
-}
-
 input{
-    font-size: 20px;
-    width: 180px;
-    
+    font-size: 16px;
+    width: 120px;
 }
 
-td{
+/* td{
     align-items: center;
-}
+} */
 
 .btn{
     font-size: 22px;

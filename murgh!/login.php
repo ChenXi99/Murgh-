@@ -42,28 +42,25 @@ if ($member) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<link href="top.css" rel="stylesheet">
 <style>div{padding: 10px;font-size:16px;}</style>
 <title>Login</title>
-<link href="login.css" rel="stylesheet">
+<link href="login2.css" rel="stylesheet">
 </head>
+
 <body>
+  <div class="wrap">
+    <div class="icon"><img src="murgh.png" alt=""></div>
 
-<div class="icon_wrap1">
-    <div class="icon"><a href=""><img src="murgh.png" alt=""></a></div>
-    <div class="icon"></div>
-</div>
+    <form action="" method="post">
+      <table style="margin-left: 80px; margin-top: 30px; font-size: 22px;">
+        <tr><td width="60px">ID:</td><td><input type="email" name="email" /></td></tr>
+        <tr><td width="60px">PW:</td><td><input type="password" name="password" /></td></tr>
+      </table>
+    <input class="btn" type="submit" value="LOGIN" />
+    </form>
 
-<div class="icon_wrap2">
-  <form action="" method="post">
-  ID:<input type="email" name="email" /><br>
-  PW:<input type="password" name="password" /><br>
-  <input type="submit" value="LOGIN" />
-  </form>
+    <div style="font-size: 20px;"><a href="create_account.php">Create Account</a></br></div>
 
-  <div class=""><br><a href="create_account.php">Create Account</a></br></div>
-
-</div>
-
+  </div>
 </body>
 </html>

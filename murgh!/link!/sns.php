@@ -32,6 +32,21 @@ if (!empty($_POST)) {
   }
 }
 
+
+if (!empty($_GET)) {
+  if ($_GET['post_id'] !== '') {
+
+    $new_likes = $_GET['current_like']+1;
+
+    $like_stmt = $pdo->prepare('UPDATE posts SET liked=? WHERE id=?');
+    $like_stmt->execute(array($new_likes, $_GET['post_id']));
+
+    header('Location: sns.php'); 
+    //同じ画面を初期状態で呼び出す(これがないとリロードの度に投稿される)
+    exit();
+  }
+}
+
 $page = $_REQUEST['page'];
 if ($page == '') {
   $page = 1;
@@ -74,7 +89,7 @@ if (isset($_REQUEST['res'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="link!2.css" rel="stylesheet">
+    <link href="link!.css" rel="stylesheet">
     <title></title>
 </head>
 <body>
@@ -98,53 +113,63 @@ if (isset($_REQUEST['res'])) {
 
 <form action="" method="post">
       <dl>
-        <dt><?php print(htmlspecialchars($user['name'], ENT_QUOTES)); ?> 's post</dt>
+        <dt><?php echo(h($user['name'])); ?> 's post</dt>
         <dd>
-          <textarea name="message" cols="50" rows="2"><?php print(htmlspecialchars($message, ENT_QUOTES)); ?></textarea>
-          <input type="hidden" name="reply_post_id" value="<?php print(htmlspecialchars($_REQUEST['res'], ENT_QUOTES)); ?>" />
+          <textarea name="message" cols="50" rows="2"><?php echo(h($message)); ?></textarea>
+          <input type="hidden" name="reply_post_id" value="<?php echo(h($_REQUEST['res'])); ?>" />
         </dd>
       </dl>
       <div>
-        <p>
-          <input type="submit" value="POST" />
-        </p>
+          <input class="btn3" type="submit" value="POST" />
       </div>
     </form>
 
     <?php foreach ($posts as $post): ?>
 
     <div class="msg">
-    <img src="../user_image/<?php print(htmlspecialchars($post['image'], ENT_QUOTES))?>" width="52" height="52" alt="<?php print(htmlspecialchars($post['name'], ENT_QUOTES))?>" />
-    <p><?php print(htmlspecialchars($post['message'], ENT_QUOTES))?>
-    <span class="name">（<?php print(htmlspecialchars($post['name'], ENT_QUOTES))?>）
-    </span>[<a href="sns.php?res=<?php print(htmlspecialchars($post['id'], ENT_QUOTES)); ?>">Re</a>]</p>
-    <p class="day"><a href="view.php?id=<?php print(htmlspecialchars($post['id'])); ?>">
-    <?php print(htmlspecialchars($post['created'], ENT_QUOTES))?></a>
+      <div>
+      <img src="../user_image/<?php echo(h($post['image']))?>" width="52" height="52" alt="<?php echo(h($post['name']))?>" />
+      <?php echo(h($post['name']))?>
+      </div>
+    <div class="msg_post">
+      <p><?php echo(h($post['message']))?>
+      <!-- <span class="name">（<?php echo(h($post['name']))?>） -->
+      </span>[<a href="sns.php?res=<?php echo(h($post['id'])); ?>">Re</a>]
+      </p>
 
-    <?php if ($post['reply_message_id'] > 0): ?>
-    <a href="view.php?id=<?php print(htmlspecialchars($post['reply_message_id'], ENT_QUOTES))?>">
-    返信元のメッセージ</a>
-    <?php endif; ?>
+      <p class="day"><a href="view.php?id=<?php echo(h($post['id'])); ?>">
+      <?php echo(h($post['created']))?></a>
+      
+      <?php if ($post['reply_message_id'] > 0): ?>
+      <a href="view.php?id=<?php echo(h($post['reply_message_id']))?>">
+      original message</a>
+      <?php endif; ?>
 
-    <?php if($_SESSION['id'] == $post['user_id']): ?>
+      <?php if($_SESSION['id'] == $post['user_id']): ?>
 
-[<a href="delete.php?id=<?php print(htmlspecialchars($post['id'])); ?>"
-style="color: #F33;">Delete</a>]
-<?php endif;?>
+      [<a href="delete.php?id=<?php echo(h($post['id'])); ?>"
+      style="color: #F33;">Delete</a>]
+      <?php endif;?>
+      </p>
+    </div>
 
-    </p>
+    <div style="text-align: center; margin-right: 10px">
+      <a href="?post_id=<?=$post['id']?>&current_like=<?=$post['liked']?>"><img src="icon_like.jpeg" width="30" height="30" name="like" /></a>
+      <p><?=$post['liked']?></p>
+    </div>
+
     </div>
 
     <?php endforeach; ?>
 
 <ul class="paging">
 <?php if($page > 1): ?>
-<li><a href="index.php?page=<?php print($page-1); ?>">Previous page</a></li>
+<li><a href="sns.php?page=<?php print($page-1); ?>">Previous page</a></li>
 <?php else: ?>
-<li><a href="index.php?page=<?php print($page+1); ?>">Next page</a></li>
+<li><a href="sns.php?page=<?php print($page+1); ?>">Next page</a></li>
 <?php endif; ?>
 
 </ul>
-    
+
 </body>
 </html>

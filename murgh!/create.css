@@ -17,33 +17,16 @@ body{
     border-radius: 40px;
 }
 
-.wrap{
-    margin-top: 35px;
-    justify-content: center;
-    align-items: center;
-}
-
-.icon{
-    display: block;
-    justify-content: center;
-    margin-top:35px;
-}
-
-img{
-    width: 320px;
-}
-
 input{
-    font-size: 20px;
-    width: 180px;
-    
+    font-size: 16px;
+    width: 120px;
 }
 
-td{
+/* td{
     align-items: center;
-}
+} */
 
-.btn{
+/* .btn{
     font-size: 22px;
     width: 220px;
     justify-content: center;
@@ -53,7 +36,7 @@ td{
     border: 1px solid  rgb(54, 54, 54);
     margin: 15px auto;
     padding: 5px;
-}
+} */
 .btn:hover{
     background-color: orange;
     color: white;

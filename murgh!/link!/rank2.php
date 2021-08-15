@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="link!2.css" rel="stylesheet">
+    <link href="link!.css" rel="stylesheet">
     <title>Offer</title>
 </head>
 <body>

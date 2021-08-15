@@ -4,9 +4,17 @@ require_once('../funcs.php');
 
 $pdo = db_conn();
 
+if (isset ($_SESSION['id']) && $_SESSION['time'] + 3600 > time()) {
+  $_SESSION['time'] = time(); //最後の行動から1時間経過したらログアウト
+
   $users = $pdo->prepare('SELECT * FROM users WHERE id=?');
-  $users->execute(array($_GET['uid']));
+  $users->execute(array($_SESSION['id']));
   $user = $users->fetch();
+
+} else {
+  header('Location: ../login.php');
+  exit();
+}
 
 ?>
 
