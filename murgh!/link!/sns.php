@@ -100,8 +100,8 @@ if (isset($_REQUEST['res'])) {
           <div class="container">
           <div class="navbar-header"><a class="a_nav" href="../top.html"><img src="../link.png" class="icon" alt=""></a></div>
           <div class="navbar-header"><a class="a_nav" href="rank.php">Rank!</a></div>
-          <div class="navbar-header"><a class="a_nav" href="top_farmer.php">Top Farmer💎</a></div>
-          <div class="navbar-header"><a class="a_nav" href="prof.php">Profile</a></div>
+          <div class="navbar-header"><a class="a_nav" href="recruit.php">Recruit!</a></div>
+          <div class="navbar-header"><a class="a_nav" href="prof_account.php">Profile</a></div>
           </div>
         </nav>
     </header>

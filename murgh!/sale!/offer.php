@@ -30,8 +30,17 @@
         <div class="d"><label>Delivery Date  <input type="date" name="date"></label></div>
         <div class="d"><label>Number  <input type="number" name="number"></label>birds</div>
         <div class="d"><label>Price  <input type="number" name="price"></label>Rs./kg</div>
-        <div class="d"><label>Terms  <input type="radio" name="terms" value="a">Ex-farm</label>
-        <input type="radio" name="terms" value="b">Delivery included</label></div>  
+        <div class="d"><label>Terms
+            <input type="radio" name="terms" value="ex-farm">Ex-farm</label>
+            <input type="radio" name="terms" value="delivery included">Delivery included</label>
+        </div>  
+        <div class="d"><label>Payment</label>
+            <select name="payment">
+            <option value="cash on delivery">Cash</option>
+            <option value="online, advance">Online, advance</option>
+            <option value="online, deferred">Online, deferred</option>
+            </select>
+        </div>  
         <div class="d"><label>Notes  <textarea type="text" cols="50" rows="2" name="notes"></textarea></label></div>
 
         <input type="submit" class="btn" value="OFFER!">

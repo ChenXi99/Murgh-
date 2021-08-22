@@ -52,14 +52,15 @@ if ($member) {
     <div class="icon"><img src="murgh.png" alt=""></div>
 
     <form action="" method="post">
-      <table style="margin-left: 80px; margin-top: 30px; font-size: 22px;">
+      <table style="margin-left: 85px; margin-top: 30px; font-size: 22px;">
         <tr><td width="60px">ID:</td><td><input type="email" name="email" /></td></tr>
         <tr><td width="60px">PW:</td><td><input type="password" name="password" /></td></tr>
       </table>
     <input class="btn" type="submit" value="LOGIN" />
     </form>
 
-    <div style="font-size: 20px;"><a href="create_account.php">Create Account</a></br></div>
+    <div style="font-size: 18px;"><a href="create_account.php">Create Account</a></br>
+    <a href="logout.php">Log Out</a></div>
 
   </div>
 </body>

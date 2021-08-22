@@ -77,6 +77,7 @@ $buy_offers->execute(array($_REQUEST['id']));
         <table style="font-size:18px; margin: 5px 60px;">
             <tr><td width="120px">Response:</td><td><?php echo(h($buy_offer['interest'])); ?></td></tr>
             <tr><td width="120px">Time:</td><td><?php echo(h($buy_offer['buy_offer_date'])); ?></td></tr>
+            <tr><td width="120px">Payment:</td><td><?php echo(h($buy_offer['payment'])); ?></td></tr>
             <tr><td width="120px">Mobile No.:</td><td style="font-weight:bold"><?php echo(h($buy_offer['mobile'])); ?><a href=""> 📞</a></td></tr>
         </table>
 

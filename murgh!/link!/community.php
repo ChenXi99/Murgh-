@@ -1,3 +1,15 @@
+<?php
+session_start();
+require_once('../funcs.php');
+
+$pdo = db_conn();
+
+$users = $pdo->prepare('SELECT name,image FROM users WHERE id=?');
+$users->execute(array($_SESSION['id']));
+$user = $users->fetch();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,9 +27,11 @@
           <div class="container">
           <div class="navbar-header"><a class="a_nav" href="../top.html"><img src="../link.png" class="icon" alt=""></a></div>
           <div class="navbar-header"><a class="a_nav" href="rank.php">Rank!</a></div>
-          <div class="navbar-header"><a class="a_nav" href="top_farmer.php">Top Farmer💎</a></div>
-          <div class="navbar-header"><a class="a_nav" href="prof.php">My Profile</a></div>
-          </div>
+          <div class="navbar-header"><a class="a_nav" href="recruit.php">Recruit!</a></div>
+          <div class="navbar-header"><a class="a_nav" href="prof_account.php">My Profile</a></div>
+          <!-- <div class="navbar-header">
+              <img class="dp_header" src="../user_image/<?php echo(h($user['image']))?>" alt="<?php echo(h($user['name']))?>" /></div>
+          </div> -->
         </nav>
     </header>
     <!-- Head[End] -->

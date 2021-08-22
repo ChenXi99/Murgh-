@@ -67,6 +67,7 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])){
 	<title>CreateAccount</title>
 
 	<link rel="stylesheet" href="create_account.css" />
+	
 </head>
 
 <body>

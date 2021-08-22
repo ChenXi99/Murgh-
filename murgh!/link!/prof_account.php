@@ -36,7 +36,7 @@ if (isset ($_SESSION['id']) && $_SESSION['time'] + 3600 > time()) {
           <div class="navbar-header"><a class="a_nav" href="../top.html"><img src="../link.png" class="icon" alt=""></a></div>
           <div class="navbar-header"><a class="a_nav" href="community.php">Community</a></div>
           <div class="navbar-header"><a class="a_nav" href="rank.php">Rank!</a></div>
-          <div class="navbar-header"><a class="a_nav" href="top_farmer.php">Top Farmer💎</a></div>
+          <div class="navbar-header"><a class="a_nav" href="recruit.php">Recruit!</a></div>
           </div>
         </nav>
     </header>
